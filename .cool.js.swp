@@ -1,0 +1,10 @@
+var coolApp = angular.module('coolApp', []);
+
+coolApp.controller('coolAppSelectorCtrl', function ($scope) {
+  $scope.choiceA = [
+    {'url': "http://upload.wikimedia.org/wikipedia/commons/d/d6/Claude_Monet_-_Graystaks_I.JPG"}
+  ];
+  $scope.choiceB = [
+    {'url': "http://upload.wikimedia.org/wikipedia/commons/1/1b/Claude_Monet_-_Woman_with_a_Parasol_-_Madame_Monet_and_Her_Son_-_Google_Art_Project.jpg"}
+  ]
+}

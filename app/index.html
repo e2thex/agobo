@@ -1,0 +1,39 @@
+<html ng-app="coolApp">
+<!--script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script-->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+<script type="text/javascript" src="./js/engine.js"></script>
+<script type="text/javascript" src="./js/controllers.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/basic.css" />
+
+<body ng-controller="coolAppSelectorCtrl">
+  <section id='choice'>
+    <section id='choice-a' class = "{{choiceA.class}} item-count-{{choiceA.items.length}}" ng-click="setChoice(1)">
+      <div ng-repeat="choice in choiceA.items" class = "choice-item" style = "background-image:url({{choice.url}})"></div>
+    </section>
+    <section id='choice-b' class = "{{choiceB.class}} item-count-{{choiceB.items.length}}" ng-click="setChoice(0)">
+      <div class = "choice-item"  ng-repeat="choice in choiceB.items" style = "background-image:url({{choice.url}})"></div>
+    </section>
+  </section>
+  <section id ='actions'>
+    <div class = "skip-action" ng-click="setChoice()">Skip</div>
+  </section>
+  <section id="rank">
+  <table>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Score</th>
+        <th>Events</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="lines in scores" ng-class-odd="'odd'" ng-class-even="'even'">
+        <td class = "score-name">{{items[lines.id].name}}</td>
+        <td class = "score-score">{{lines.score}}</td>
+        <td class = "score-events">{{lines.events}}</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
