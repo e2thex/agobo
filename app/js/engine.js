@@ -61,7 +61,6 @@ var engine = function(items, events, scoringEngine, eventEngine) {
       };
     });
     candidates.sort(function(a,b) {return a.nextScore-b.nextScore});
-    console.log("cand", candidates);
     return engineEvent([itemA.item], candidates[0].items);
   }
   that.getRankedItems = function() {
@@ -162,7 +161,6 @@ var eventEngine1 = function EventEngine1() {
       };
     });
     candidates.sort(function(a,b) {return a.nextScore-b.nextScore});
-    console.log("cand", candidates);
     return engineEvent([itemA.item], candidates[0].items);
   }
   return that;
@@ -198,7 +196,9 @@ var eloEngine = function(factor, start, kfactor) {
   that.start = typeof start == 'undefined' ? 1450 : start;
   var computedE = function(outcome,score, oscore) {
     //http://en.wikipedia.org/wiki/Elo_rating_system#Mathematical_details
-    var eOutcome = 1/(1 + 10^((oscore-score)/that.factor));
+    //
+    var eOutcome = 1/(1 + Math.pow(10,(oscore-score)/that.factor));
+    console.log(eOutcome, outcome, oscore-score);
     var delta = that.kfactor*(outcome-eOutcome);
     return delta;
   };
@@ -209,13 +209,24 @@ var eloEngine = function(factor, start, kfactor) {
       return scores;
     }, {});
     events.forEach(function(e) {
-      console.log("event", e);
-      var itemA = e.choiceA;
-      var itemB = e.choiceB;
-      scores[e.choiceA[0]].score += computedE(e.outcome, scores[e.choiceA[0]].score, scores[e.choiceB[0]].score);
-      scores[e.choiceB[0]].score += computedE(1-e.outcome, scores[e.choiceB[0]].score, scores[e.choiceA[0]].score);
-      scores[e.choiceA[0]].events ++;
-      scores[e.choiceB[0]].events ++;
+      var choiceAtotal = e.choiceA.reduce(function (total,id){ 
+        total += scores[id].score; 
+        return total;
+      },0);
+      var choiceBtotal = e.choiceB.reduce(function (total,id){ 
+        total += scores[id].score; 
+        return total;
+      },0);
+      var choiceADelta = computedE(e.outcome, choiceAtotal, choiceBtotal);
+      var choiceBDelta = computedE(1-e.outcome, choiceBtotal, choiceAtotal);
+      e.choiceA.forEach(function(id) {
+        scores[id].score += choiceADelta * scores[id].score/choiceAtotal ;
+        scores[id].events ++;
+      });
+      e.choiceB.forEach(function(id) {
+        scores[id].score += choiceBDelta * scores[id].score/choiceBtotal ;
+        scores[id].events ++;
+      });
     });
     return Object.keys(scores).map(function(id) {
       return {
