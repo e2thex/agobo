@@ -8,7 +8,7 @@
 .item-count-2 .choice-item {
   height:50%;
 }
-#choice-a, #choice-b {
+#choice-a, #choice-b, #choice-tie {
   width:46%;
   height:400px;
   float:left;
@@ -16,7 +16,25 @@
   padding:1%;
   border-radius: 1em
 }
-#choice-a:hover, #choice-b:hover {
+#choice-tie {
+  position: absolute;
+  left: 40%;
+  width: 15%;
+  z-index:500;
+  background: no-repeat center;
+  background-size: contain;
+}
+#choice-tie:hover {
+  background-image:url("http://img3.wikia.nocookie.net/__cb20130902192536/scribblenauts/images/thumb/a/ae/Equal_Sign.png/150px-Equal_Sign.png");
+  cursor: hand;
+}
+#choice-a:hover + * + #choice-tie {
+  background-image:url("http://img2.wikia.nocookie.net/__cb20130902193220/scribblenauts/images/2/23/Greater_Than_Sign.png");
+}
+#choice-b:hover + #choice-tie {
+  background-image:url("http://img2.wikia.nocookie.net/__cb20130902193350/scribblenauts/images/0/0b/Less_Than_Sign.png");
+}
+#choice-a:hover, #choice-b:hover{
   background-color: #eee;
   cursor: hand;
 }

@@ -13,6 +13,7 @@
     <section id='choice-b' class = "{{choiceB.class}} item-count-{{choiceB.items.length}}" ng-click="setChoice(0)">
       <div class = "choice-item"  ng-repeat="choice in choiceB.items" style = "background-image:url({{choice.url}})"></div>
     </section>
+    <section id='choice-tie' ng-click="setChoice(.5)"></section>
   </section>
   <section id ='actions'>
     <div class = "skip-action" ng-click="setChoice()">Skip</div>
