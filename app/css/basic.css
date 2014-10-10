@@ -6,7 +6,15 @@
   margin:5px;
 }
 .item-count-2 .choice-item {
-  height:50%;
+  height:48%;
+}
+.item-count-3 .choice-item {
+  height:33%;
+}
+.item-count-4 .choice-item {
+  height:48%;
+  width:48%;
+  float:left;
 }
 #choice-a, #choice-b, #choice-tie {
   width:46%;
