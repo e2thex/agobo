@@ -80,7 +80,7 @@ coolApp.controller('coolAppSelectorCtrl', function ($scope) {
       'name': "Two"
     },
   };
-  $scope.engine = engine($scope.items, [], eloEngine(), randomEventEngine());
+  $scope.engine = engine($scope.items, [], eloEngine(), randomEventWithLevelsEngine());
   $scope.scores = [];
   $scope.choice = 'a';
   $scope.choiceA = {

@@ -174,7 +174,26 @@ var randomEventEngine = function() {
   }
   return that;
 }
-
+var randomEventWithLevelsEngine = function(levels) {
+  var that = {levels:levels ? typeof levels =='undefined' : 4, factor :5};
+  that.getCandidate = function(scores) {
+    var clevel = Math.floor(Math.pow(Math.random(),this.factor) * this.levels)+1;
+    return shuffle(scores).splice(0,clevel).map(function(item) {
+      return item.id;
+    });
+  }
+  that.createEvent = function randomEventwith2EngineNewEvent(scores, events, items) {
+    var choiceA = this.getCandidate(scores);
+    var choiceB;
+    do {
+      choiceB = this.getCandidate(scores);
+    } while (choiceA.some(function(a) { 
+      return choiceB.indexOf(a) != -1
+    }));
+    return engineEvent(choiceA, choiceB);
+  }
+  return that;
+}
 
 var randomScoringEngine = function() {
   var that = {};
