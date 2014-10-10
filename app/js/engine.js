@@ -220,7 +220,8 @@ var scoringEngine1 = function ScoringEngine1() {
   return that;
 }
 
-function shuffle(array) {
+function shuffle(arrayin) {
+  var array = arrayin.slice();
   var m = array.length, t, i;
 
   // While there remain elements to shuffle…
