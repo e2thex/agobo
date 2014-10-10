@@ -39,6 +39,18 @@ coolApp.controller('coolAppSelectorCtrl', function ($scope) {
       'url': "http://upload.wikimedia.org/wikipedia/commons/f/f9/US_$5_Series_2006_obverse.jpg",
       'name': "Five"
     },
+    'dollar5-1':{
+      'url': "http://upload.wikimedia.org/wikipedia/commons/f/f9/US_$5_Series_2006_obverse.jpg",
+      'name': "Five"
+    },
+    'dollar5-2':{
+      'url': "http://upload.wikimedia.org/wikipedia/commons/f/f9/US_$5_Series_2006_obverse.jpg",
+      'name': "Five"
+    },
+    'dollar5-3':{
+      'url': "http://upload.wikimedia.org/wikipedia/commons/f/f9/US_$5_Series_2006_obverse.jpg",
+      'name': "Five"
+    },
     'dollar10':{
       'url': "http://upload.wikimedia.org/wikipedia/commons/4/49/US10dollarbill-Series_2004A.jpg",
       'name': "Ten"
@@ -46,6 +58,14 @@ coolApp.controller('coolAppSelectorCtrl', function ($scope) {
     'dollar20':{
       'url': "http://upload.wikimedia.org/wikipedia/commons/b/bf/US20-front.jpg",
       'name': "Twenty"
+    },
+    'dollar20-2':{
+      'url': "http://upload.wikimedia.org/wikipedia/commons/b/bf/US20-front.jpg",
+      'name': "Twenty -1"
+    },
+    'dollar20-3':{
+      'url': "http://upload.wikimedia.org/wikipedia/commons/b/bf/US20-front.jpg",
+      'name': "Twenty -2"
     },
     'dollar50':{
       'url': "http://img.4plebs.org/boards/hr/image/1403/75/1403754418629.jpg",
