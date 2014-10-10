@@ -135,7 +135,7 @@ var randomScoringEngine = function() {
 var eloEngine = function(factor, start, kfactor) {
   var that = {};
   that.factor = typeof factor == 'undefined' ? 400 : factor;
-  that.kfactor = typeof kfactor == 'undefined' ? 32 : kfactor;
+  that.kfactor = typeof kfactor == 'undefined' ? 100 : kfactor;
   that.start = typeof start == 'undefined' ? 1450 : start;
   var computedE = function(outcome,score, oscore) {
     //http://en.wikipedia.org/wiki/Elo_rating_system#Mathematical_details
