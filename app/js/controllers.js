@@ -37,19 +37,19 @@ coolApp.controller('coolAppSelectorCtrl', function ($scope) {
     },
     'dollar5':{
       'url': "http://upload.wikimedia.org/wikipedia/commons/f/f9/US_$5_Series_2006_obverse.jpg",
-      'name': "Five"
+      'name': "Five-0"
     },
     'dollar5-1':{
       'url': "http://upload.wikimedia.org/wikipedia/commons/f/f9/US_$5_Series_2006_obverse.jpg",
-      'name': "Five"
+      'name': "Five-1"
     },
     'dollar5-2':{
       'url': "http://upload.wikimedia.org/wikipedia/commons/f/f9/US_$5_Series_2006_obverse.jpg",
-      'name': "Five"
+      'name': "Five-2"
     },
     'dollar5-3':{
       'url': "http://upload.wikimedia.org/wikipedia/commons/f/f9/US_$5_Series_2006_obverse.jpg",
-      'name': "Five"
+      'name': "Five-3"
     },
     'dollar10':{
       'url': "http://upload.wikimedia.org/wikipedia/commons/4/49/US10dollarbill-Series_2004A.jpg",
