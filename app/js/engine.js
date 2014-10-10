@@ -139,9 +139,7 @@ var eloEngine = function(factor, start, kfactor) {
   that.start = typeof start == 'undefined' ? 1450 : start;
   var computedE = function(outcome,score, oscore) {
     //http://en.wikipedia.org/wiki/Elo_rating_system#Mathematical_details
-    //
     var eOutcome = 1/(1 + Math.pow(10,(oscore-score)/that.factor));
-    console.log(eOutcome, outcome, oscore-score);
     var delta = that.kfactor*(outcome-eOutcome);
     return delta;
   };
