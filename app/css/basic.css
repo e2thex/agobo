@@ -81,5 +81,7 @@ td.score-events {
   width:50px;
 }
 
-  width:50px;
+h1.header-template {
+  color:red;
+  font-size:4vw;
 }

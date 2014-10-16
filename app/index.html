@@ -8,10 +8,10 @@
 <body ng-controller="coolAppSelectorCtrl">
   <section id='choice'>
     <section id='choice-a' class = "{{choiceA.class}} item-count-{{choiceA.items.length}}" ng-click="setChoice(1)">
-      <div ng-repeat="choice in choiceA.items" class = "choice-item" style = "background-image:url({{choice.url}})"></div>
+      <div ng-repeat="choice in choiceA.items" ng-include="choice.template"></div>
     </section>
     <section id='choice-b' class = "{{choiceB.class}} item-count-{{choiceB.items.length}}" ng-click="setChoice(0)">
-      <div class = "choice-item"  ng-repeat="choice in choiceB.items" style = "background-image:url({{choice.url}})"></div>
+      <div ng-repeat="choice in choiceB.items" ng-include="choice.template"></div>
     </section>
     <section id='choice-tie' ng-click="setChoice(.5)"></section>
   </section>
