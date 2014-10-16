@@ -107,7 +107,7 @@ var randomEventWithLevelsEngine = function(levels) {
     });
   }
   that.createEvent = function randomEventwith2EngineNewEvent(scores, events, items) {
-    var choiceA = this.getCandidate(scores);
+    var choiceA = this.getCandidate(scores, this.factor);
     var choiceB;
     do {
       choiceB = this.getCandidate(scores);
@@ -119,6 +119,36 @@ var randomEventWithLevelsEngine = function(levels) {
   return that;
 }
 
+var eventEngine2 = function(levels) {
+  var that = randomEventWithLevelsEngine(levels);
+  that.bucketSize = 20;
+  that.getBucket = function(scores, size) {
+    var eEngine = this;
+    return Array.apply(null, Array(size)).map(function() {
+      var items = eEngine.getCandidate(scores);
+      var data = items.reduce(function(d, item) {
+          d.events += item.events/items.length;
+          d.score += item.score;
+          d.items.push(item.id);
+        return d;
+      }, {events:0, score:0, items:[]})
+      return data;
+    });
+  }
+  that.getCandidate = function(scores) {
+    var clevel = Math.floor(Math.pow(Math.random(),this.factor) * this.levels)+1;
+    return shuffle(scores).splice(0,clevel).map(function(item) {
+      return item;
+    });
+  }
+  that.createEvent = function randomEventwith2EngineNewEvent(scores, events, items) {
+    var choiceABucket = this.getBucket(scores, this.bucketSize).sort(function(a,b) {
+      a.events>b.events;
+    });
+    return engineEvent(choiceABucket[0].items, choiceABucket[1].items);
+  }
+  return that;
+}
 var randomScoringEngine = function() {
   var that = {};
   that.score = function(items, events) {
@@ -162,11 +192,11 @@ var eloEngine = function(factor, start, kfactor) {
       var choiceBDelta = computedE(1-e.outcome, choiceBtotal, choiceAtotal);
       e.choiceA.forEach(function(id) {
         scores[id].score += choiceADelta * scores[id].score/choiceAtotal ;
-        scores[id].events ++;
+        scores[id].events += 1/e.choiceA.length;
       });
       e.choiceB.forEach(function(id) {
         scores[id].score += choiceBDelta * scores[id].score/choiceBtotal ;
-        scores[id].events ++;
+        scores[id].events += 1/e.choiceB.length;
       });
     });
     return Object.keys(scores).map(function(id) {
