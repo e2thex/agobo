@@ -3,38 +3,45 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
 <script type="text/javascript" src="./js/engine.js"></script>
 <script type="text/javascript" src="./js/controllers.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/pocketgrid.css" />
 <link rel="stylesheet" type="text/css" href="./css/basic.css" />
+<link rel="stylesheet" type="text/css" href="./css/item-templates.css" />
+<link rel="stylesheet" type="text/css" href="./css/rank-table.partial.css" />
 
-<body ng-controller="coolAppSelectorCtrl">
-  <section id='choice'>
-    <section id='choice-a' class = "{{choiceA.class}} item-count-{{choiceA.items.length}}" ng-click="setChoice(1)">
-      <div ng-repeat="choice in choiceA.items" ng-include="choice.template"></div>
+<body ng-controller="coolAppSelectorCtrl" class="block-group">
+  <section 
+     id='choice' 
+     class="block block-group"
+  >
+    <section 
+      id='choice-a' 
+      class = "{{choiceA.class}} item-count-{{choiceA.items.length}} block block-group" 
+      ng-click="setChoice(1)"
+    >
+      <div 
+        ng-repeat="choice in choiceA.items" 
+        ng-include="choice.template" 
+        class= 'block choice-item'
+      ></div>
     </section>
-    <section id='choice-b' class = "{{choiceB.class}} item-count-{{choiceB.items.length}}" ng-click="setChoice(0)">
-      <div ng-repeat="choice in choiceB.items" ng-include="choice.template"></div>
+    <section 
+      id='choice-b' 
+      class = "{{choiceB.class}} item-count-{{choiceB.items.length}} block block-group" 
+      ng-click="setChoice(0)"
+    >
+      <div 
+        ng-repeat="choice in choiceB.items" 
+        ng-include="choice.template"
+        class = "block choice-item" 
+      ></div>
     </section>
     <section id='choice-tie' ng-click="setChoice(.5)"></section>
   </section>
-  <section id ='actions'>
+  <section id ='actions' class= 'block-group block'>
     <div class = "skip-action" ng-click="setChoice()">Skip</div>
   </section>
-  <section id="rank">
-  <table>
-    <thead>
-      <tr>
-        <th>Item</th>
-        <th>Score</th>
-        <th>Events</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="lines in scores" ng-class-odd="'odd'" ng-class-even="'even'">
-        <td class = "score-name">{{items[lines.id].name}}</td>
-        <td class = "score-score">{{lines.score}}</td>
-        <td class = "score-events">{{lines.events}}</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <ng-include src="'rank-table.partial.html'" />
 </body>
 </html>
 

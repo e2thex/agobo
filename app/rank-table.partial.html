@@ -1,0 +1,18 @@
+<section id="rank" class="block">
+  <table>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Score</th>
+        <th>Events</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="lines in scores" ng-class-odd="'odd'" ng-class-even="'even'">
+        <td class = "score-name">{{items[lines.id].name}}</td>
+        <td class = "score-score">{{lines.score}}</td>
+        <td class = "score-events">{{lines.events}}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

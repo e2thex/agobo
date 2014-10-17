@@ -1,0 +1,17 @@
+#rank {
+  margin:.5em;
+}
+#rank table {
+  border-collapse: collapse;
+  width:100%;
+}
+#rank tr.even {
+  background: #eee;
+}
+td.score-score {
+  width:50px;
+}
+td.score-events {
+  width:50px;
+}
+

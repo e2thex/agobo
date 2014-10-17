@@ -1,37 +1,21 @@
-.choice-item {
+#choice {
+  height:90vh;
+}
+#choice-a, #choice-b {
   width:100%;
-  height:100%;
-  background: no-repeat center center;
-  background-size: contain;
-  margin:5px;
-}
-.item-count-2 .choice-item {
-  height:48%;
-}
-.item-count-3 .choice-item {
-  height:33%;
-}
-.item-count-4 .choice-item {
-  height:48%;
-  width:48%;
-  float:left;
-}
-#choice-a, #choice-b, #choice-tie {
-  width:46%;
-  height:400px;
-  float:left;
-  margin:1%;
-  padding:1%;
+  height:50%;
   border-radius: 1em
 }
 #choice-tie {
   position: absolute;
-  left: 40%;
-  width: 15%;
+  top: 40%;
+  width:100%;
+  height: 15%;
   z-index:500;
   background: no-repeat center;
   background-size: contain;
 }
+
 #choice-tie:hover {
   background-image:url("http://img3.wikia.nocookie.net/__cb20130902192536/scribblenauts/images/thumb/a/ae/Equal_Sign.png/150px-Equal_Sign.png");
   cursor: hand;
@@ -46,42 +30,63 @@
   background-color: #eee;
   cursor: hand;
 }
-#choice-a.selected, #choice-b.selected {
-  background-color: #ddd;
+
+.choice-item {
+  width:100%;
+  height:100%;
 }
+.item-count-2 .choice-item {
+  width:50%;
+}
+.item-count-3 .choice-item {
+  height:50%;
+  width:50%;
+}
+.item-count-4 .choice-item {
+  height:50%;
+  width:50%;
+}
+@media (min-aspect-ratio: 3/1) {
+  .item-count-3 .choice-item {
+    width:33%;
+    height:100%
+  }
+}
+@media (min-aspect-ratio: 4/1) {
+  .item-count-4 .choice-item {
+    width:25%;
+    height:100%
+  }
+}
+
+@media (min-aspect-ratio: 1/1) {
+
+  #choice-a, #choice-b {
+    width:50%;
+    height:100%;
+    border-radius: 1em
+  }
+  #choice-tie {
+    top: 0;
+    left: 40%;
+    width:20%;
+    height: 100%;
+    z-index:500;
+  }
+  
+}
+
 #actions {
   clear:both
 }
 .skip-action {
-  width: 99%;
   text-align: center;
   background: #900;
   border-radius: 1em;
-  font-size: 3em;
-  padding: .25em;
+  font-size: 5vh;
+  padding: 1vh;
 }
 .skip-action:hover {
   cursor: hand;
   background: #800;
-}
-#rank {
-  margin:.5em;
-}
-#rank table {
-  border-collapse: collapse;
-  width:100%;
-}
-#rank tr.even {
-  background: #eee;
-}
-td.score-score {
-  width:50px;
-}
-td.score-events {
-  width:50px;
-}
-
-h1.header-template {
-  color:red;
-  font-size:4vw;
 }
