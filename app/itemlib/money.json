@@ -1,0 +1,62 @@
+{
+ "dollar1":{
+    "template":"image.partial.html",
+    "url": "http://i46.tinypic.com/24n1d82.jpg",
+    "name": "One"
+  },
+  "dollar5":{
+    "template":"image.partial.html",
+    "url": "http://upload.wikimedia.org/wikipedia/commons/f/f9/US_$5_Series_2006_obverse.jpg",
+    "name": "Five-0"
+  },
+  "dollar5-1":{
+    "template":"image.partial.html",
+    "url": "http://upload.wikimedia.org/wikipedia/commons/f/f9/US_$5_Series_2006_obverse.jpg",
+    "name": "Five-1"
+  },
+  "dollar5-2":{
+    "url": "http://upload.wikimedia.org/wikipedia/commons/f/f9/US_$5_Series_2006_obverse.jpg",
+    "template":"image.partial.html",
+    "name": "Five-2"
+  },
+  "dollar5-3":{
+    "template":"image.partial.html",
+    "url": "http://upload.wikimedia.org/wikipedia/commons/f/f9/US_$5_Series_2006_obverse.jpg",
+    "name": "Five-3"
+  },
+  "dollar10":{
+    "template":"image.partial.html",
+    "url": "http://upload.wikimedia.org/wikipedia/commons/4/49/US10dollarbill-Series_2004A.jpg",
+    "name": "Ten"
+  },
+  "dollar20":{
+    "template":"image.partial.html",
+    "url": "http://upload.wikimedia.org/wikipedia/commons/b/bf/US20-front.jpg",
+    "name": "Twenty"
+  },
+  "dollar20-2":{
+    "template":"image.partial.html",
+    "url": "http://upload.wikimedia.org/wikipedia/commons/b/bf/US20-front.jpg",
+    "name": "Twenty -1"
+  },
+  "dollar20-3":{
+    "template":"image.partial.html",
+    "url": "http://upload.wikimedia.org/wikipedia/commons/b/bf/US20-front.jpg",
+    "name": "Twenty -2"
+  },
+  "dollar50":{
+    "template":"image.partial.html",
+    "url": "http://img.4plebs.org/boards/hr/image/1403/75/1403754418629.jpg",
+    "name": "Fifty"
+  },
+  "dollar100":{
+    "template":"image.partial.html",
+    "url": "http://upload.wikimedia.org/wikipedia/commons/4/4d/Usdollar100front.jpg",
+    "name": "One Hundred"
+  },
+  "dollar2":{
+    "template":"image.partial.html",
+    "url": "http://upload.wikimedia.org/wikipedia/commons/9/94/US_$2_obverse-high.jpg",
+    "name": "Two"
+  }
+}

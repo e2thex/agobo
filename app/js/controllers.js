@@ -25,7 +25,7 @@ coolApp.controller('coolAppSelectorCtrl', function ($scope, $http) {
     $scope.initChoice();
   }
 
-  $http.get('itemlib/test1.json')
+  $http.get('itemlib/art.json')
     .then(function(res){
     $scope.items = res.data;                
     $scope.engine = engine($scope.items, [], eloEngine(), eventEngine2());

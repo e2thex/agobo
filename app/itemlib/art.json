@@ -1,0 +1,37 @@
+{
+ "a1":{
+    "template":"image.partial.html",
+    "url": "http://1.bp.blogspot.com/_XdcdGxtaSos/S-RU_E1iQwI/AAAAAAAAAOg/CDByo2t3Cp4/s1600/The+Garden+Series+-+Reading+Together.jpg",
+    "name": "The Garden Series eading Togeather"
+  },
+  "a2":{
+    "template":"image.partial.html",
+    "url": "http://upload.wikimedia.org/wikipedia/commons/d/d6/Claude_Monet_-_Graystaks_I.JPG",
+    "name": "Graystaks I"
+  },
+  "a3":{
+    "template":"image.partial.html",
+    "url": "http://upload.wikimedia.org/wikipedia/commons/1/1b/Claude_Monet_-_Woman_with_a_Parasol_-_Madame_Monet_and_Her_Son_-_Google_Art_Project.jpg",
+    "name": "Woman with a Parasol"
+  },
+  "a4":{
+    "template":"image.partial.html",
+    "url": "http://paintings-art-picture.com/paintings/wp-content/uploads/2012/03/21/Karl-Albert-Buehr-The-Bridge-to-the-Artists-House-1908-11-Impressionism-Paintings-4.jpeg",
+    "name": "The Bridge to the Artists"
+  },
+  "a5":{
+    "template":"image.partial.html",
+    "url": "http://www.artwallpaper.eu/Paintings/wp-content/uploads/2013/01/21/2707/Henry-Moret-Nothern-Sea-1900-Impressionism-Paintings-Art-Images-22.jpeg",
+    "name": "Henry"
+  },
+  "a6":{
+    "template":"image.partial.html",
+    "url": "https://img1.etsystatic.com/000/0/5711041/il_fullxfull.308392231.jpg",
+    "name": "Jazz"
+  },
+  "a7":{
+    "template":"image.partial.html",
+    "url": "http://i.huffpost.com/gen/2299606/images/n-STARRY-NIGHT-628x314.jpg",
+    "name": "Starry Night"
+  }
+}
